@@ -1,4 +1,4 @@
-0.150   2017-10-11 (PERLANCAR)
+0.150   2017-10-11  Released-By: PERLANCAR
 
         - First release, split from App-CreateSelfSignedSSLCert and rename
           App::CreateSelfSignedSSLCert to AppLib::CreateSelfSignedSSLCert so it
