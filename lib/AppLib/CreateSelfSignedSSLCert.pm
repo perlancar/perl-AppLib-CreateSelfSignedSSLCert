@@ -1,12 +1,14 @@
 package AppLib::CreateSelfSignedSSLCert;
 
-# DATE
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
 use Log::ger;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 use Expect;
 #use File::chdir;
@@ -70,6 +72,7 @@ sub create_self_signed_ssl_cert {
 
     system("openssl genrsa 2048 > "._sq("$h.key"));
     return [500, "Can't generate key: ".explain_child_error()] if $?;
+    chmod 400, "$h.key" or warn "WARN: Can't chmod 400 $h.key: $!";
 
     my $cmd = "openssl req -new -key "._sq("$h.key")." -out "._sq("$h.csr");
     if ($args{interactive}) {
