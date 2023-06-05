@@ -2,3 +2,4 @@ AppLib-CreateSelfSignedSSLCert-*
 .build
 *~
 nytprof*
+.DS_Store
